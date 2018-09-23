@@ -14,6 +14,6 @@ module tb;
 
     //Generate a clock with 10 ns clock period.
     initial Clk = 0;
-    always #488.7585  Clk = ~Clk;
+    always #833000  Clk = ~Clk;
     
 endmodule
