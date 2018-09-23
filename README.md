@@ -1,1 +1,1 @@
-# sinewave generator with a frequency of 200mhz
+# sinewave generator with a frequency of 600Hz
