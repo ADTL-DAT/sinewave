@@ -1,0 +1,16 @@
+module sinewav(Clk,data_out,sine);
+//declare input and output
+    input Clk;
+    output reg [7:0] data_out;
+  
+    input [7:0] sine [0:29];
+//Internal signals  
+    integer i;  
+   //At every positive edge of the clock, output a sine wave sample.
+    always@ (posedge(Clk))
+    begin
+        for(i=0; i<30; i=i+1)
+        data_out = sine[i];
+        
+    end
+endmodule
