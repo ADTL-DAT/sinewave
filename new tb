@@ -1,0 +1,54 @@
+module sinetb;
+
+    // Inputs
+    reg Clk;
+    reg [7:0] sine [0:29];
+
+    // Outputs
+    wire [7:0] data_out;
+
+    // Instantiate the Unit Under Test (UUT)
+    sinewav uut (
+        .Clk(Clk), 
+        .data_out(data_out), .sine(sine)
+    );
+
+    //Generate a clock with 10 ns clock period.
+    initial Clk = 0;
+    always #833000  Clk = ~Clk;
+    
+    initial 
+       begin
+            sine[0] = 8'd0;
+            sine[1] = 8'd16;
+            sine[2] = 8'd31;
+            sine[3] = 8'd45;
+            sine[4] = 8'd58;
+            sine[5] = 8'd67;
+            sine[6] = 8'd74;
+            sine[7] = 8'd77;
+            sine[8] = 8'd77;
+            sine[9] = 8'd74;
+            sine[10] =8'd67;
+            sine[11] =8'd58;
+            sine[12] =8'd45;
+            sine[13] =8'd31;
+            sine[14] =8'd16;
+            sine[15] =8'd0;
+            sine[16] = -8'd16;
+            sine[17] = -8'd31;
+            sine[18] = -8'd45;
+            sine[19] = -8'd58;
+            sine[20] = -8'd67;
+            sine[21] = -8'd74;
+            sine[22] = -8'd77;
+            sine[23] = -8'd77;
+            sine[24] = -8'd74;
+            sine[25] = -8'd67;
+            sine[26] = -8'd58;
+            sine[27] = -8'd45;
+            sine[28] = -8'd31;
+            sine[29] = -8'd16;
+        end
+    
+endmodule
